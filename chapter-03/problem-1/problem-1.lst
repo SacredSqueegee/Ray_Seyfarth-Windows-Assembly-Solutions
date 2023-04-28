@@ -1502,32 +1502,23 @@
    626                              <1> %rotate 1
    627                              <1> %endrep
    628                              <1> %endmacro
-     1                                  ; memory.asm book example
-     2                                  
-     3                                      segment .data
-     4 00000000 04000000                a   dd  4
-     5 00000004 CDCC8C40                b   dd  4.4
-     6 00000008 00000000<rept>          c   times 10 dd 0
-     7 00000030 01000200                d   dw  1, 2
-     8 00000034 FB                      e   db  0xfb
-     9 00000035 68656C6C6F20776F72-     f   db  "hello world", 0
-     9 0000003E 6C6400             
-    10                                  
-    11                                      segment .bss
-    12 00000000 <res 00000004>          g   resd    1
-    13 00000004 <res 00000028>          h   resd    10
-    14 0000002C <res 00000064>          i   resb    100
-    15                                  
-    16                                      segment .text
-    17                                      global  main
-    18                                  main:
-    19 00000000 55                          push    rbp         ; setup a stack frame
-    20 00000001 4889E5                      mov     rbp, rsp    ; rbp points to stack frame
-    21 00000004 4883EC20                    sub     rsp, 32     ; leave room for shadow parameters
-    22                                                          ; rsp on a 16 byte boundary
-    23 00000008 31C0                        xor     eax, eax    ; rax = 0 for return value
-    24 0000000A C9                          leave               ; undo stack frame changes
-    25 0000000B C3                          ret
-    26                                  
-    27                                  
-    28                                  
+     1                                          segment .data
+     2 00000000 8877665544332211-       array1  times 10 dq 0x1122334455667788
+     2 00000000 <rept>             
+     3 00000050 536F6D652073747269-     string1 db "Some string...", 0
+     3 00000059 6E672E2E2E00       
+     4                                  
+     5                                          segment .bss
+     6 00000000 <res 0000000A>          array2  resw 5
+     7                                  
+     8                                          segment .text
+     9                                          global  main
+    10                                          extern  exit
+    11                                  main:
+    12 00000000 55                              push    rbp
+    13 00000001 4889E5                          mov     rbp, rsp
+    14                                      
+    15 00000004 4883EC20                        sub     rsp, 32
+    16 00000008 B900000000                      mov     rcx, 0
+    17 0000000D E8(00000000)                    call    exit
+    18                                  

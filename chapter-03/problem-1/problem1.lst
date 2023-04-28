@@ -1510,15 +1510,17 @@
      4                                  
      5                                          segment .bss
      6 00000000 <res 0000000A>          array2  resw 5
-     7                                  
-     8                                          segment .text
-     9                                          global  main
-    10                                          extern  exit
-    11                                  main:
-    12 00000000 55                              push    rbp
-    13 00000001 4889E5                          mov     rbp, rsp
-    14                                      
-    15 00000004 4883EC20                        sub     rsp, 32
-    16 00000008 B900000000                      mov     rcx, 0
-    17 0000000D E8(00000000)                    call    exit
-    18                                  
+     7 0000000A <res 00000002>          array3  resw 1
+     8 0000000C <res 00000004>          array4  resw 2
+     9                                  
+    10                                          segment .text
+    11                                          global  main
+    12                                          extern  exit
+    13                                  main:
+    14 00000000 55                              push    rbp
+    15 00000001 4889E5                          mov     rbp, rsp
+    16                                      
+    17 00000004 4883EC20                        sub     rsp, 32
+    18 00000008 B800000000                      mov     rax, 0
+    19 0000000D E8(00000000)                    call    exit
+    20                                  

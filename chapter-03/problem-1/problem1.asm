@@ -4,6 +4,8 @@ string1 db "Some string...", 0
 
         segment .bss
 array2  resw 5
+array3  resw 1
+array4  resw 2
 
         segment .text
         global  main
@@ -13,6 +15,6 @@ main:
         mov     rbp, rsp
     
         sub     rsp, 32
-        mov     rcx, 0
+        mov     rax, 0
         call    exit
 

@@ -50,10 +50,20 @@ Q1 > Write a data-only program like the one in this chapter to define an array o
 > If you look closely at array2 you might notice that there are actually 16 bytes "associated" with our array. This is more than the 10 bytes that we reserved in the BSS segment in our code. This is most likely do to the linker padding our array to the nearest alignment of 16 bytes.
 > 
 
-Q2 > 
+Q2 > Assuming that the stack size limit is 1MB about how large can you declare an array of doubles inside a c++ function. Do not use the keyword static.
 
 > [!warning]- A2
-> pass
+> For this problem we are going to make a few assumptions, like a good engineer :).
+> - The whole stack is dedicated to the storage of our array of doubles. So, their won't be call back addresses, variables, or any other junk on the stack to account for. The stack will be 100% allocated to our array.
+> - No using the heap for extra storage as directed by the last statement of the question.
+> - A double is: 64-bits = 8-bytes = 1-qword
+> 
+> First step is to figure out how many bytes we are working with. This is quite simple as $1[\text{MB}]=1024^2[\text{B}]=1,048,576[\text{B}]$.
+> 
+> Now, knowing that a double is 8-bytes long, we just divide `1,048,576` by `8`.
+> $1,048,576\ [\text{B}]\ /\ 8\ [\text{B/double}]=131,072\ [\text{doubles}]$
+> 
+> Thus, a stack of 1MB can store up to `131,072` doubles.
 
 Q3 > 
 

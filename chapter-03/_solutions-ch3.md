@@ -65,7 +65,7 @@ Q2 > Assuming that the stack size limit is 1MB about how large can you declare a
 > 
 > Thus, a stack of 1MB can store up to `131,072` doubles.
 
-Q3 > 
+Q3 > Use the command line and compile a C program with an array of 1 million doubles. You will probably need to us `-Wl,--stack,8000000` option on the gcc command. Note that this option has a lowercase 'L' after the 'W' not a '1'. Test the program by writing a loop and placing 0.0 throughout the array. Determine the smallest number which works to the nearest 1000.
 
 > [!warning]- A3
 > pass

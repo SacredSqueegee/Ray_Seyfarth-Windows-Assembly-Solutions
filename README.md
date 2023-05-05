@@ -3,6 +3,8 @@
 
 > [!important]
 > This is a work in progress (as of: 4/25/2023) and will be updated periodically as I complete new chapters.
+> 
+> It is also highly recommended to view these notes in Obsidian for proper formatting.
 
 This repo will contain my solutions to the problems at the end of each chapter in the book "Introduction to 64 Bit Windows Assembly Language Programming" by Ray Seyfarth. As I go through the book I might make my own errata document located in the root directory with errors that I find throughout the text. Already going through the book I've noticed a few typos in charts and in the exercise questions. For the errors in the exercise questions I will include a bug callout card explaining what I believe the error to be and any fixes/assumptions I made to fix the error in order to solve the problem.
 

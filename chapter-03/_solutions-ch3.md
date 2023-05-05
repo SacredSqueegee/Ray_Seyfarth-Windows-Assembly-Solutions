@@ -137,7 +137,10 @@ Q3 > Use the command line and compile a C program with an array of 1 million dou
 > Doing the math, `1954[pages]` of memory is equal to `8003584[B]` of memory. This is now plenty of memory for our `8000000[B]` of doubles and any C runtime overhead that requires stack space.
 > 
 
-Q4 > 
+Q4 > Print the value of `rsp` in ebe. How many bits are required to store this value?
 
 > [!warning]- A4
-> pass
+> To start off, I'm not even sure why this question exists. It doesn't seem to fit in with the chapter contents. Going to the Intel manual under section 3.7.2.1, one can see that RSP is a 64-bit general-purpose register while in 64-bit mode.
+> 
+> ![[Pasted image 20230504230317.png]]
+> 
